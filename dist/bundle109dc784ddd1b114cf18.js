@@ -12,14 +12,53 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var _popUp_comments__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./popUp-comments */ "./src/modules/popUp-comments.js");
+
 var displayShows = function displayShows(data) {
   var mainContainer = document.querySelector('#shows-container');
   var card = document.createElement('div');
   card.classList = 'show';
-  card.innerHTML = "\n\n    <img src=\"".concat(data.image.original, "\" />\n    <p class=\"show-name\">").concat(data.name, "</p>\n    <div class=\"likes\">\n        <i class=\"uil uil-heart-alt\"></i>\n        <span></span>\n        1 likes\n    </div>              \n    <button class=\"comments\">Comments</button>\n    <button class=\"reservations\">Reservations</button>\n    \n    ");
+  card.innerHTML = "\n    <img src=\"".concat(data.image.original, "\" />\n    <p class=\"show-name\">").concat(data.name, "</p>\n    <div class=\"likes\">\n        <i class=\"uil uil-heart-alt\"></i>\n        <span></span>\n        1 likes\n    </div>              \n    <button class=\"comment\" id=\"").concat(data.name, "\">Comments</button>\n    <button class=\"reservations\">Reservations</button>\n    ");
   mainContainer.appendChild(card);
+  (0,_popUp_comments__WEBPACK_IMPORTED_MODULE_0__.openComment)(data);
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (displayShows);
+
+/***/ }),
+
+/***/ "./src/modules/popUp-comments.js":
+/*!***************************************!*\
+  !*** ./src/modules/popUp-comments.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
+/* harmony export */   openComment: () => (/* binding */ openComment)
+/* harmony export */ });
+var popupOverlay = document.getElementById('popupOverlay');
+var popupContent = document.getElementById('popupContent');
+var showPopup = function showPopup(data) {
+  // Set the content of the popup
+  popupContent.innerHTML = "\n    <span class=\"popup-close\">&times;</span>\n    <img id=\"api-image\" src=\"".concat(data.image.original, "\" />\n    <p class=\"show-name\">").concat(data.name, "</p>\n    <div class=\"likes\">\n        <i class=\"uil uil-heart-alt\"></i>\n        <span></span>\n        1 likes\n    </div>              \n    <button class=\"comment\">Comments</button>\n    <button class=\"reservations\">Reservations</button>\n    ");
+  ;
+  popupOverlay.style.display = 'flex';
+};
+var openComment = function openComment(data) {
+  document.addEventListener('click', function (event) {
+    if (event.target.id === "".concat(data.name)) {
+      showPopup(data);
+    }
+  });
+};
+document.addEventListener('click', function (event) {
+  var closeButton = event.target.closest('.popup-close');
+  if (closeButton) {
+    popupOverlay.style.display = 'none';
+  }
+});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (showPopup);
 
 /***/ }),
 
@@ -83,7 +122,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "* {\r\n  margin: 0;\r\n  padding: 0;\r\n  outline: 0;\r\n  list-style: none;\r\n  text-decoration: none;\r\n  box-sizing: border-box;\r\n}\r\n\r\n.navbar {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  padding: 10px 100px;\r\n  height: 80px;\r\n  background-color: rgb(113, 109, 105);\r\n}\r\n\r\nul {\r\n  display: flex;\r\n  justify-content: space-between;\r\n}\r\n\r\nli {\r\n  font-size: 1.2rem;\r\n  margin-left: 10px;\r\n}\r\n\r\n.shows-container {\r\n  display: flex;\r\n  flex-wrap: wrap;\r\n  width: 80%;\r\n  height: 60vh;\r\n  border: 1px solid green;\r\n  margin: 1rem auto;\r\n  padding: 1.5rem;\r\n  overflow-y: scroll;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n.show {\r\n  display: flex;\r\n  width: 30%;\r\n  flex-direction: column;\r\n  border: 1px solid red;\r\n  margin: 0.5rem;\r\n  padding: 0.5rem;\r\n}\r\n\r\n.show img {\r\n  width: 100%;\r\n  aspect-ratio: 1;\r\n  align-self: center;\r\n  justify-self: center;\r\n}\r\n\r\n.likes {\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: flex-end;\r\n  justify-content: space-between;\r\n}\r\n\r\nbutton {\r\n  align-items: center;\r\n  justify-self: center;\r\n  margin: 0.5rem;\r\n}\r\n\r\nfooter {\r\n  position: absolute;\r\n  background-color: rgb(113, 109, 105);\r\n  left: 0;\r\n  bottom: 0;\r\n  height: 80px;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  width: 100%;\r\n}\r\n", "",{"version":3,"sources":["webpack://./src/styles/main.css"],"names":[],"mappings":"AAAA;EACE,SAAS;EACT,UAAU;EACV,UAAU;EACV,gBAAgB;EAChB,qBAAqB;EACrB,sBAAsB;AACxB;;AAEA;EACE,aAAa;EACb,8BAA8B;EAC9B,mBAAmB;EACnB,mBAAmB;EACnB,YAAY;EACZ,oCAAoC;AACtC;;AAEA;EACE,aAAa;EACb,8BAA8B;AAChC;;AAEA;EACE,iBAAiB;EACjB,iBAAiB;AACnB;;AAEA;EACE,aAAa;EACb,eAAe;EACf,UAAU;EACV,YAAY;EACZ,uBAAuB;EACvB,iBAAiB;EACjB,eAAe;EACf,kBAAkB;EAClB,uBAAuB;EACvB,mBAAmB;AACrB;;AAEA;EACE,aAAa;EACb,UAAU;EACV,sBAAsB;EACtB,qBAAqB;EACrB,cAAc;EACd,eAAe;AACjB;;AAEA;EACE,WAAW;EACX,eAAe;EACf,kBAAkB;EAClB,oBAAoB;AACtB;;AAEA;EACE,aAAa;EACb,sBAAsB;EACtB,qBAAqB;EACrB,8BAA8B;AAChC;;AAEA;EACE,mBAAmB;EACnB,oBAAoB;EACpB,cAAc;AAChB;;AAEA;EACE,kBAAkB;EAClB,oCAAoC;EACpC,OAAO;EACP,SAAS;EACT,YAAY;EACZ,aAAa;EACb,uBAAuB;EACvB,mBAAmB;EACnB,WAAW;AACb","sourcesContent":["* {\r\n  margin: 0;\r\n  padding: 0;\r\n  outline: 0;\r\n  list-style: none;\r\n  text-decoration: none;\r\n  box-sizing: border-box;\r\n}\r\n\r\n.navbar {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  padding: 10px 100px;\r\n  height: 80px;\r\n  background-color: rgb(113, 109, 105);\r\n}\r\n\r\nul {\r\n  display: flex;\r\n  justify-content: space-between;\r\n}\r\n\r\nli {\r\n  font-size: 1.2rem;\r\n  margin-left: 10px;\r\n}\r\n\r\n.shows-container {\r\n  display: flex;\r\n  flex-wrap: wrap;\r\n  width: 80%;\r\n  height: 60vh;\r\n  border: 1px solid green;\r\n  margin: 1rem auto;\r\n  padding: 1.5rem;\r\n  overflow-y: scroll;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n.show {\r\n  display: flex;\r\n  width: 30%;\r\n  flex-direction: column;\r\n  border: 1px solid red;\r\n  margin: 0.5rem;\r\n  padding: 0.5rem;\r\n}\r\n\r\n.show img {\r\n  width: 100%;\r\n  aspect-ratio: 1;\r\n  align-self: center;\r\n  justify-self: center;\r\n}\r\n\r\n.likes {\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: flex-end;\r\n  justify-content: space-between;\r\n}\r\n\r\nbutton {\r\n  align-items: center;\r\n  justify-self: center;\r\n  margin: 0.5rem;\r\n}\r\n\r\nfooter {\r\n  position: absolute;\r\n  background-color: rgb(113, 109, 105);\r\n  left: 0;\r\n  bottom: 0;\r\n  height: 80px;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  width: 100%;\r\n}\r\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "* {\r\n  margin: 0;\r\n  padding: 0;\r\n  outline: 0;\r\n  list-style: none;\r\n  text-decoration: none;\r\n  box-sizing: border-box;\r\n}\r\n\r\n.navbar {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  padding: 10px 100px;\r\n  height: 80px;\r\n  background-color: rgb(113, 109, 105);\r\n}\r\n\r\nul {\r\n  display: flex;\r\n  justify-content: space-between;\r\n}\r\n\r\nli {\r\n  font-size: 1.2rem;\r\n  margin-left: 10px;\r\n}\r\n\r\n.shows-container {\r\n  display: flex;\r\n  flex-wrap: wrap;\r\n  width: 80%;\r\n  height: 60vh;\r\n  border: 1px solid green;\r\n  margin: 1rem auto;\r\n  padding: 1.5rem;\r\n  overflow-y: scroll;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n.show {\r\n  display: flex;\r\n  width: 30%;\r\n  flex-direction: column;\r\n  border: 1px solid red;\r\n  margin: 0.5rem;\r\n  padding: 0.5rem;\r\n}\r\n\r\n.show img {\r\n  width: 100%;\r\n  aspect-ratio: 1;\r\n  align-self: center;\r\n  justify-self: center;\r\n}\r\n\r\n.likes {\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: flex-end;\r\n  justify-content: space-between;\r\n}\r\n\r\nbutton {\r\n  align-items: center;\r\n  justify-self: center;\r\n  margin: 0.5rem;\r\n}\r\n\r\n/* Pop Up page for comments btn*/\r\n/* Popup styles */\r\n\r\n.popup-close {\r\n  position: absolute;\r\n  top: 10px;\r\n  right: 10px;\r\n  cursor: pointer;\r\n  border: 2px solid red;\r\n}\r\n\r\n.popup-overlay {\r\n  position: fixed;\r\n  top: 0;\r\n  left: 0;\r\n  width: 100%;\r\n  height: 100%;\r\n  background-color: rgba(0, 0, 0, 0.5);\r\n  display: none;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n.popup-content {\r\n  background-color: white;\r\n  padding: 20px;\r\n  border-radius: 5px;\r\n  width: 900px;\r\n  height: 75vh;\r\n  overflow-y: auto;\r\n  position: relative;\r\n}\r\n\r\n.popup-close {\r\n  font-size: 2.5rem;\r\n  font-weight: 900;\r\n  position: absolute;\r\n  top: 10px;\r\n  right: 10px;\r\n  cursor: pointer;\r\n}\r\n#api-image{\r\n  width: 750px;\r\n  height: 50vh ;\r\n}\r\n\r\n\r\nfooter {\r\n  position: absolute;\r\n  background-color: rgb(113, 109, 105);\r\n  left: 0;\r\n  bottom: 0;\r\n  height: 80px;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  width: 100%;\r\n}\r\n", "",{"version":3,"sources":["webpack://./src/styles/main.css"],"names":[],"mappings":"AAAA;EACE,SAAS;EACT,UAAU;EACV,UAAU;EACV,gBAAgB;EAChB,qBAAqB;EACrB,sBAAsB;AACxB;;AAEA;EACE,aAAa;EACb,8BAA8B;EAC9B,mBAAmB;EACnB,mBAAmB;EACnB,YAAY;EACZ,oCAAoC;AACtC;;AAEA;EACE,aAAa;EACb,8BAA8B;AAChC;;AAEA;EACE,iBAAiB;EACjB,iBAAiB;AACnB;;AAEA;EACE,aAAa;EACb,eAAe;EACf,UAAU;EACV,YAAY;EACZ,uBAAuB;EACvB,iBAAiB;EACjB,eAAe;EACf,kBAAkB;EAClB,uBAAuB;EACvB,mBAAmB;AACrB;;AAEA;EACE,aAAa;EACb,UAAU;EACV,sBAAsB;EACtB,qBAAqB;EACrB,cAAc;EACd,eAAe;AACjB;;AAEA;EACE,WAAW;EACX,eAAe;EACf,kBAAkB;EAClB,oBAAoB;AACtB;;AAEA;EACE,aAAa;EACb,sBAAsB;EACtB,qBAAqB;EACrB,8BAA8B;AAChC;;AAEA;EACE,mBAAmB;EACnB,oBAAoB;EACpB,cAAc;AAChB;;AAEA,gCAAgC;AAChC,iBAAiB;;AAEjB;EACE,kBAAkB;EAClB,SAAS;EACT,WAAW;EACX,eAAe;EACf,qBAAqB;AACvB;;AAEA;EACE,eAAe;EACf,MAAM;EACN,OAAO;EACP,WAAW;EACX,YAAY;EACZ,oCAAoC;EACpC,aAAa;EACb,uBAAuB;EACvB,mBAAmB;AACrB;;AAEA;EACE,uBAAuB;EACvB,aAAa;EACb,kBAAkB;EAClB,YAAY;EACZ,YAAY;EACZ,gBAAgB;EAChB,kBAAkB;AACpB;;AAEA;EACE,iBAAiB;EACjB,gBAAgB;EAChB,kBAAkB;EAClB,SAAS;EACT,WAAW;EACX,eAAe;AACjB;AACA;EACE,YAAY;EACZ,aAAa;AACf;;;AAGA;EACE,kBAAkB;EAClB,oCAAoC;EACpC,OAAO;EACP,SAAS;EACT,YAAY;EACZ,aAAa;EACb,uBAAuB;EACvB,mBAAmB;EACnB,WAAW;AACb","sourcesContent":["* {\r\n  margin: 0;\r\n  padding: 0;\r\n  outline: 0;\r\n  list-style: none;\r\n  text-decoration: none;\r\n  box-sizing: border-box;\r\n}\r\n\r\n.navbar {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  padding: 10px 100px;\r\n  height: 80px;\r\n  background-color: rgb(113, 109, 105);\r\n}\r\n\r\nul {\r\n  display: flex;\r\n  justify-content: space-between;\r\n}\r\n\r\nli {\r\n  font-size: 1.2rem;\r\n  margin-left: 10px;\r\n}\r\n\r\n.shows-container {\r\n  display: flex;\r\n  flex-wrap: wrap;\r\n  width: 80%;\r\n  height: 60vh;\r\n  border: 1px solid green;\r\n  margin: 1rem auto;\r\n  padding: 1.5rem;\r\n  overflow-y: scroll;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n.show {\r\n  display: flex;\r\n  width: 30%;\r\n  flex-direction: column;\r\n  border: 1px solid red;\r\n  margin: 0.5rem;\r\n  padding: 0.5rem;\r\n}\r\n\r\n.show img {\r\n  width: 100%;\r\n  aspect-ratio: 1;\r\n  align-self: center;\r\n  justify-self: center;\r\n}\r\n\r\n.likes {\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: flex-end;\r\n  justify-content: space-between;\r\n}\r\n\r\nbutton {\r\n  align-items: center;\r\n  justify-self: center;\r\n  margin: 0.5rem;\r\n}\r\n\r\n/* Pop Up page for comments btn*/\r\n/* Popup styles */\r\n\r\n.popup-close {\r\n  position: absolute;\r\n  top: 10px;\r\n  right: 10px;\r\n  cursor: pointer;\r\n  border: 2px solid red;\r\n}\r\n\r\n.popup-overlay {\r\n  position: fixed;\r\n  top: 0;\r\n  left: 0;\r\n  width: 100%;\r\n  height: 100%;\r\n  background-color: rgba(0, 0, 0, 0.5);\r\n  display: none;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n.popup-content {\r\n  background-color: white;\r\n  padding: 20px;\r\n  border-radius: 5px;\r\n  width: 900px;\r\n  height: 75vh;\r\n  overflow-y: auto;\r\n  position: relative;\r\n}\r\n\r\n.popup-close {\r\n  font-size: 2.5rem;\r\n  font-weight: 900;\r\n  position: absolute;\r\n  top: 10px;\r\n  right: 10px;\r\n  cursor: pointer;\r\n}\r\n#api-image{\r\n  width: 750px;\r\n  height: 50vh ;\r\n}\r\n\r\n\r\nfooter {\r\n  position: absolute;\r\n  background-color: rgb(113, 109, 105);\r\n  left: 0;\r\n  bottom: 0;\r\n  height: 80px;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  width: 100%;\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -621,4 +660,4 @@ for (var i = 1; i < 7; i += 1) {
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle846d9b6d163a5b11a97b.js.map
+//# sourceMappingURL=bundle109dc784ddd1b114cf18.js.map
