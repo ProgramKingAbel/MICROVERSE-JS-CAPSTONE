@@ -7,6 +7,31 @@
   box-sizing: border-box;
 }
 
-body {
-  background-color: aqua;
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 100px;
+  height: 80px;
+  background-color: rgb(113, 109, 105);
+}
+ul{
+  display: flex;
+  justify-content: space-between;
+}
+li{
+  font-size: 1.2rem;
+  margin-left: 10px;
+}
+
+footer{
+  position: absolute;
+  background-color: rgb(113, 109, 105);
+  left: 0;
+  bottom: 0;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
