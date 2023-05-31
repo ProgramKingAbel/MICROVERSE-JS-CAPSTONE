@@ -17,7 +17,7 @@ export const displayComments = async (targetMovie) => {
 
 export const postComment = async (itemId, username, comment) => {
   const newComment = {
-    itemId, username, comment, creation_date: new Date().toISOString(),
+    item_id: itemId, username, comment, creation_date: new Date().toISOString(),
   };
 
   addComments(newComment);
@@ -26,7 +26,7 @@ export const postComment = async (itemId, username, comment) => {
     {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
-      body: JSON.stringify({ itemId, username, comment }),
+      body: JSON.stringify({ item_id: itemId, username, comment }),
     });
   const data = await response.json();
 
