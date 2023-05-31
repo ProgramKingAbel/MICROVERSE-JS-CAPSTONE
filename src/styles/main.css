@@ -92,6 +92,18 @@ button {
   height: 75vh;
   overflow-y: auto;
   position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.data-details {
+  height: 50%;
+  border: 2px solid;
+  width: 90%;
+  margin-top: 10px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
 }
 
 .popup-close {
@@ -104,8 +116,8 @@ button {
 }
 
 #api-image {
-  width: 750px;
-  height: 50vh;
+  width: 300px;
+  height: 28vh;
 }
 
 footer {
@@ -118,4 +130,23 @@ footer {
   justify-content: center;
   align-items: center;
   width: 100%;
+}
+
+.like-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+#comment-list {
+  margin-top: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: gray;
+}
+
+.submit-container {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
 }

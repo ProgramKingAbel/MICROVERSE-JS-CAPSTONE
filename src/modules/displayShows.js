@@ -1,4 +1,4 @@
-import { openComment } from './popUp-comments.js';
+import showSelectedMovie from './popUp-comments.js';
 
 const displayShows = (data) => {
   data.forEach((e) => {
@@ -18,7 +18,10 @@ const displayShows = (data) => {
     `;
     mainContainer.appendChild(card);
 
-    openComment(e);
+    const commentBtn = document.getElementById(`${e.name}`);
+    commentBtn.addEventListener('click', () => {
+      showSelectedMovie(e.id);
+    });
   });
 };
 
