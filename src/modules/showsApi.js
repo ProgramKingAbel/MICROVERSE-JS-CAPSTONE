@@ -1,11 +1,9 @@
-import displayShows from './displayShows.js';
+// Make requests from the two API's
 
-const fetchShows = async (id) => {
-  await fetch(`https://api.tvmaze.com/shows/${id}`)
-    .then((response) => response.json())
-    .then((data) => {
-      displayShows(data);
-    });
-};
+const fetchData = async (link) => fetch(link)
+  .then((response) => response.json());
 
-export default fetchShows;
+const fetchShows = fetchData('https://api.tvmaze.com/shows');
+const fetchLikes = fetchData('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/fDeldDFM61dNTEWtzoPU/likes');
+
+export { fetchShows, fetchLikes, fetchData };
