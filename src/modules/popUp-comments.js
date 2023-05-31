@@ -21,7 +21,7 @@ const showPopup = (data) => {
 
 export const openComment = (data) => {
   document.addEventListener('click', (event) => {
-    if (event.target.id === `${data.name}`) {
+    if (event.target.id === `item${data.id}`) {
       showPopup(data);
     }
   });

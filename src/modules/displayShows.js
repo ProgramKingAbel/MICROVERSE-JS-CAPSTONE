@@ -12,7 +12,7 @@ const displayShows = (data) => {
         <span></span>
         1 likes
     </div>              
-    <button class="comment" id="${data.name}">Comments</button>
+    <button class="comment" id="item${data.id}">Comments</button>
     <button class="reservations">Reservations</button>
     `;
   mainContainer.appendChild(card);
