@@ -4,15 +4,14 @@ import './styles/main.css';
 
 Promise.all([fetchShows, fetchLikes])
   .then(([show, likes]) => {
-    const allData = show.map(item1 => {
-      const commonItem = likes.find(item2 => item2.item_id === item1.id);
+    const allData = show.map((item1) => {
+      const commonItem = likes.find((item2) => item2.item_id === item1.id);
 
       return {
         ...item1,
-        ...commonItem
-      }
+        ...commonItem,
+      };
     });
 
-   displayShows(allData);    
-})
-
+    displayShows(allData);
+  });
