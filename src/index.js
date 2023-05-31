@@ -1,6 +1,18 @@
-import fetchShows from './modules/showsApi.js';
+import { fetchShows, fetchLikes } from './modules/showsApi.js';
+import displayShows from './modules/displayShows.js';
 import './styles/main.css';
 
-for (let i = 1; i < 7; i += 1) {
-  fetchShows(i);
-}
+Promise.all([fetchShows, fetchLikes])
+  .then(([show, likes]) => {
+    const allData = show.map(item1 => {
+      const commonItem = likes.find(item2 => item2.item_id === item1.id);
+
+      return {
+        ...item1,
+        ...commonItem
+      }
+    });
+
+   displayShows(allData);    
+})
+

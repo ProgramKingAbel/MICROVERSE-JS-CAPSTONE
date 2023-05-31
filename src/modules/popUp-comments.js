@@ -9,8 +9,7 @@ const showPopup = (data) => {
     <p class="show-name">${data.name}</p>
     <div class="likes">
         <i class="uil uil-heart-alt"></i>
-        <span></span>
-        1 likes
+        <span>${data.likes} likes</span>
     </div>              
     <button class="comment">Comments</button>
     <button class="reservations">Reservations</button>
