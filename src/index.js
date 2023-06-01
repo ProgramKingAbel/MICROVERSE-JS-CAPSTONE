@@ -1,5 +1,4 @@
 import { fetchShows, fetchLikes } from './modules/showsApi.js';
-import allShows from './modules/showsCounter.js';
 import displayShows from './modules/displayShows.js';
 import './styles/main.css';
 
@@ -14,5 +13,4 @@ Promise.all([fetchShows, fetchLikes])
       };
     });
     displayShows(allData);
-    allShows(allData);
   });
