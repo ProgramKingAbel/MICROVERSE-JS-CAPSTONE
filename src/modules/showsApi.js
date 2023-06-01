@@ -6,4 +6,4 @@ const fetchData = async (link) => fetch(link)
 const fetchShows = fetchData('https://api.tvmaze.com/shows');
 const fetchLikes = fetchData('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/fDeldDFM61dNTEWtzoPU/likes');
 
-export { fetchShows, fetchLikes, fetchData };
+export { fetchShows, fetchLikes };
