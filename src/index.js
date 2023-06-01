@@ -1,6 +1,13 @@
-import { fetchShows, fetchLikes } from './modules/showsApi.js';
 import displayShows from './modules/displayShows.js';
 import './styles/main.css';
+
+// Make requests and get data from the two API's combine data and Display
+
+const fetchData = async (link) => fetch(link)
+  .then((response) => response.json());
+
+const fetchShows = fetchData('https://api.tvmaze.com/shows');
+const fetchLikes = fetchData('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/fDeldDFM61dNTEWtzoPU/likes');
 
 Promise.all([fetchShows, fetchLikes])
   .then(([show, likes]) => {
@@ -12,6 +19,9 @@ Promise.all([fetchShows, fetchLikes])
         ...commonItem,
       };
     });
-
     displayShows(allData);
   });
+
+
+
+  

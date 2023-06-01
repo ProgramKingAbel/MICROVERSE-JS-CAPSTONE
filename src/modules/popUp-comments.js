@@ -8,7 +8,7 @@ const showPopup = (data) => {
     <img id="api-image" src="${data.image.original}" />
     <p class="show-name">${data.name}</p>
     <div class="likes">
-        <i class="uil uil-heart-alt"></i>
+        <i class="uil uil-heart-alt" id="likes"></i>
         <span>${data.likes} likes</span>
     </div>              
     <button class="comment">Comments</button>
