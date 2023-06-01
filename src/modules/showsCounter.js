@@ -1,7 +1,8 @@
 const allShows = (data) => {
   const total = data.length;
   const container = document.querySelector('.total');
-  return container.innerHTML = total;
+  container.innerHTML = total;
+  return container.innerHTML;
 };
 
 export default allShows;
