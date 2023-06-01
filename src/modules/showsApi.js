@@ -1,3 +1,10 @@
+const fetchData = async (link) => fetch(link)
+  .then((response) => response.json());
+
+export const fetchShows = fetchData('https://api.tvmaze.com/shows');
+export const fetchLikes = fetchData('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/fDeldDFM61dNTEWtzoPU/likes');
+
+
 // function to handle Likes.
 const addLike = (id) => {
   const apiBody = {

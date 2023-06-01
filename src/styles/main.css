@@ -30,7 +30,7 @@ li {
   display: flex;
   flex-wrap: wrap;
   width: 80%;
-  height: 60vh;
+  height: 70vh;
   border: 1px solid green;
   margin: 1rem auto;
   padding: 1.5rem;
@@ -92,6 +92,18 @@ button {
   height: 75vh;
   overflow-y: auto;
   position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.data-details {
+  height: 50%;
+  border: 2px solid;
+  width: 90%;
+  margin-top: 10px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
 }
 
 .popup-close {
@@ -104,8 +116,8 @@ button {
 }
 
 #api-image {
-  width: 750px;
-  height: 50vh;
+  width: 300px;
+  height: 28vh;
 }
 
 footer {
@@ -118,4 +130,58 @@ footer {
   justify-content: center;
   align-items: center;
   width: 100%;
+}
+
+.like-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+#comment-list {
+  margin-top: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(215, 211, 211);
+}
+
+.submit-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  border: 1px solid rgb(111, 130, 111);
+  align-self: center;
+}
+
+#comments-form {
+  display: flex;
+  align-self: center;
+  margin-top: 10px;
+}
+
+#new-comment-btn {
+  font-size: 15px;
+  width: 100px;
+  height: 50px;
+}
+
+#comments-form div {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+.comment-title {
+  align-self: center;
+  margin: 10px;
+}
+
+#username {
+  height: 25px;
+  margin-bottom: 5px;
+}
+
+#comment {
+  height: 60px;
 }

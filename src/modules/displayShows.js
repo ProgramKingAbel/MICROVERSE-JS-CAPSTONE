@@ -1,8 +1,9 @@
 import { openComment } from './popUp-comments.js';
 import addLike from './showsApi.js';
+import showSelectedMovie from './popUp-comments.js';
 
 export const updateLikes = () => {
-  const likeBtn = document.querySelectorAll('.likes-counter');
+  const likeBtn = document.querySelectorAll('.likes');
   likeBtn.forEach((btn, b) => {
     btn.addEventListener('click', () => {
       let id = b;
@@ -11,6 +12,7 @@ export const updateLikes = () => {
     });
   });
 };
+
 
 const displayShows = (data) => {
   data.forEach((e) => {
@@ -30,7 +32,10 @@ const displayShows = (data) => {
     `;
     mainContainer.appendChild(card);
 
-    openComment(e);
+    const commentBtn = document.getElementById(`${e.name}`);
+    commentBtn.addEventListener('click', () => {
+      showSelectedMovie(e.id);
+    });
   });
   updateLikes();
 };
