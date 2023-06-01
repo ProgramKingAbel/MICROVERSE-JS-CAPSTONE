@@ -1,6 +1,7 @@
 import { fetchShows, fetchLikes } from './modules/showsApi.js';
 import displayShows from './modules/displayShows.js';
 import './styles/main.css';
+import allShows from './modules/showsCounter.js';
 
 // Make requests and get data from the two API's combine data and Display
 Promise.all([fetchShows, fetchLikes])
@@ -13,4 +14,5 @@ Promise.all([fetchShows, fetchLikes])
       };
     });
     displayShows(allData);
+    allShows(allData);
   });
