@@ -1,6 +1,5 @@
-import { openComment } from './popUp-comments.js';
-import addLike from './showsApi.js';
 import showSelectedMovie from './popUp-comments.js';
+import addLike from './showsApi.js';
 
 export const updateLikes = () => {
   const likeBtn = document.querySelectorAll('.likes');
@@ -12,7 +11,6 @@ export const updateLikes = () => {
     });
   });
 };
-
 
 const displayShows = (data) => {
   data.forEach((e) => {
