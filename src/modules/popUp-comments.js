@@ -9,8 +9,8 @@ export const showPopup = (data, targetMovie) => {
   const filterResult = data.filter((item) => item.id === targetMovie);
   // Set the content of the popup
   popupContent.innerHTML = `
-    <span class="popup-close">&times;</span>
-    <div class="data-details">
+  <span class="popup-close">&times;</span>
+  <div class="data-details">
     <img id="api-image" src="${filterResult[0].image.original}" />
     <div class="like-container">
       <p class="show-name">${filterResult[0].name}</p>
@@ -19,20 +19,23 @@ export const showPopup = (data, targetMovie) => {
         <span>${filterResult[0].likes} likes</span>
       </div>
     </div>
+  </div>
+  <ul id="comment-list">
+    <div class="comment-counter">
+      <h2 id="comment-counter"></h2>
     </div>
-    <ul id='comment-list'></ul>  
-    <div class="submit-container">
-      <h2 class="comment-title">Add Comments</h2>            
-      <form id="comments-form">
-        <div>
-          <input type="hidden" id="movieId" name="movieId" value="${filterResult[0].id}">
-          <input type="text" id="username" placeholder="Your name">
-          <input type="text" id="comment" placeholder="Your insights">
-        </div>
-        <button id="new-comment-btn" type="submit" class="btn">Submit</button>
-      </form>
-    </div>
-    `;
+  </ul>
+  <div class="submit-container">
+    <h2 class="comment-title">Add Comments</h2>
+    <form id="comments-form">
+      <div>
+        <input type="hidden" id="movieId" name="movieId" value="${filterResult[0].id}">
+        <input type="text" id="username" placeholder="Your name">
+        <input type="text" id="comment" placeholder="Your insights">
+      </div>
+      <button id="new-comment-btn" type="submit" class="btn">Submit</button>
+    </form>
+  </div> `;
   popupOverlay.style.display = 'flex';
 
   document.addEventListener('submit', async (event) => {
