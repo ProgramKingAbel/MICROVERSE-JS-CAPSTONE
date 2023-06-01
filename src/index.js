@@ -21,7 +21,3 @@ Promise.all([fetchShows, fetchLikes])
     });
     displayShows(allData);
   });
-
-
-
-  

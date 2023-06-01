@@ -1,8 +1,7 @@
-//function to handle Likes.
-const addLike = id => {
-
+// function to handle Likes.
+const addLike = (id) => {
   const apiBody = {
-    "item_id": id
+    item_id: id,
   };
 
   fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/fDeldDFM61dNTEWtzoPU/likes', {
@@ -10,25 +9,20 @@ const addLike = id => {
     headers: {
       'Content-Type': 'application/json; charsert=UTF-8',
     },
-    body: JSON.stringify(apiBody)
+    body: JSON.stringify(apiBody),
   })
-    .then(() => {
-    
-      return fetch("https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/fDeldDFM61dNTEWtzoPU/likes");
-      
-    })
-    .then(response => response.json())
-    .then(data => {
+    .then(() => fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/fDeldDFM61dNTEWtzoPU/likes'))
+    .then((response) => response.json())
+    .then((data) => {
       // Live Updates the Like button
       let newId = id;
-      newId -= 1;   
+      newId -= 1;
       const likeBtn = document.querySelectorAll('.likes-counter')[newId];
-      data.forEach((like, i) => {
-        if(like.item_id === id) {
+      data.forEach((like) => {
+        if (like.item_id === id) {
           likeBtn.innerHTML = `${like.likes} likes`;
         }
-      })    
-    })
-    
-}
-export default  addLike ;
+      });
+    });
+};
+export default addLike;

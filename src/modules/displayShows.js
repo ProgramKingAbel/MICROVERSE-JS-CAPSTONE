@@ -1,5 +1,16 @@
 import { openComment } from './popUp-comments.js';
-import addLike  from './showsApi.js';
+import addLike from './showsApi.js';
+
+export const updateLikes = () => {
+  const likeBtn = document.querySelectorAll('.likes-counter');
+  likeBtn.forEach((btn, b) => {
+    btn.addEventListener('click', () => {
+      let id = b;
+      id += 1;
+      addLike(id);
+    });
+  });
+};
 
 const displayShows = (data) => {
   data.forEach((e) => {
@@ -20,23 +31,8 @@ const displayShows = (data) => {
     mainContainer.appendChild(card);
 
     openComment(e);
-   
-    
-
   });
   updateLikes();
 };
-
- export const updateLikes = () => {
-   const likeBtn = document.querySelectorAll('.likes-counter');
-   likeBtn.forEach((btn, b) => {
-     btn.addEventListener('click', () => {
-       let id = b;
-       id += 1;
-       addLike(id);     
-     })
-   }) 
-   
-}
 
 export default displayShows;
