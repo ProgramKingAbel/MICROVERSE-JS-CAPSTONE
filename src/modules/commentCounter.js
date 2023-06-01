@@ -1,4 +1,4 @@
-const commentCounter = (list) => {
+function commentCounter(list) {
   if (list == null) {
     return 0;
   }
@@ -6,6 +6,6 @@ const commentCounter = (list) => {
     (element) => !element.classList.contains('comment-counter'),
   );
   return commentElements.length;
-};
+}
 
-export default commentCounter;
+module.exports = { commentCounter };
