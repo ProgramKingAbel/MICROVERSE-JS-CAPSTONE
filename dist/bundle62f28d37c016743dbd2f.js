@@ -328,6 +328,26 @@ var addLike = function addLike(id) {
 
 /***/ }),
 
+/***/ "./src/modules/showsCounter.js":
+/*!*************************************!*\
+  !*** ./src/modules/showsCounter.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+var allShows = function allShows(data) {
+  var total = data.length;
+  var container = document.querySelector('.total');
+  container.innerHTML = total;
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (allShows);
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js!./src/styles/main.css":
 /*!*******************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./src/styles/main.css ***!
@@ -4965,6 +4985,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_showsApi_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/showsApi.js */ "./src/modules/showsApi.js");
 /* harmony import */ var _modules_displayShows_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/displayShows.js */ "./src/modules/displayShows.js");
 /* harmony import */ var _styles_main_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./styles/main.css */ "./src/styles/main.css");
+/* harmony import */ var _modules_showsCounter_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/showsCounter.js */ "./src/modules/showsCounter.js");
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
@@ -4981,6 +5002,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 // Make requests and get data from the two API's combine data and Display
 Promise.all([_modules_showsApi_js__WEBPACK_IMPORTED_MODULE_0__.fetchShows, _modules_showsApi_js__WEBPACK_IMPORTED_MODULE_0__.fetchLikes]).then(function (_ref) {
   var _ref2 = _slicedToArray(_ref, 2),
@@ -4993,9 +5015,10 @@ Promise.all([_modules_showsApi_js__WEBPACK_IMPORTED_MODULE_0__.fetchShows, _modu
     return _objectSpread(_objectSpread({}, show), commonItem);
   });
   (0,_modules_displayShows_js__WEBPACK_IMPORTED_MODULE_1__["default"])(allData);
+  (0,_modules_showsCounter_js__WEBPACK_IMPORTED_MODULE_3__["default"])(allData);
 });
 })();
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle13aa63ec9f96cb96144b.js.map
+//# sourceMappingURL=bundle62f28d37c016743dbd2f.js.map
