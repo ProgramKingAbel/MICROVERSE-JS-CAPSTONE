@@ -1,54 +1,48 @@
-const API = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/fDeldDFM61dNTEWtzoPU/comments';
+import axios from 'axios';
+import commentCounter from './commentCounter';
+
+const API = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/5rCENfy6BiEfx1fK3Ijn/comments';
 
 const addComments = (comment) => {
-  console.log('Adding comment:', comment);
   const commentList = document.getElementById('comment-list');
   const list = document.createElement('li');
+  list.classList.add('list-comment');
   const span = document.createElement('span');
   span.innerHTML = `${comment.creation_date}  ${comment.username}:  ${comment.comment}`;
   list.appendChild(span);
   commentList.appendChild(list);
+  // comment counter:
+  const counter = document.getElementById('comment-counter');
+  const countComments = commentCounter(
+    document.querySelectorAll('.list-comment'),
+  );
+  counter.innerHTML = `comments: (${countComments})`;
 };
 
-export const displayComments = (targetMovie) => {
-  fetch(`${API}?item_id=${targetMovie}`)
-    .then((response) => response.json())
-    .then((comments) => {
-      for (let i = 0; i < comments.length; i += 1) {
-        addComments(comments[i]);
-      }
-    })
-    .catch((error) => {
-      console.error('Error:', error);
-    });
+export const displayComments = async (targetMovie) => {
+  const response = await fetch(`${API}?item_id=${targetMovie}`);
+  const comments = await response.json();
+
+  for (let i = 0; i < comments.length; i += 1) {
+    addComments(comments[i]);
+  }
 };
 
-export const postComment = (itemId, username, comment) => {
+export const postComment = async (itemId, username, comment) => {
   const newComment = {
     item_id: itemId,
     username,
     comment,
     creation_date: new Date().toISOString(),
   };
-  addComments(newComment);
-  return fetch(API, {
-    method: 'POST',
-    headers: { 'content-type': 'application/json' },
-    body: JSON.stringify({ item_id: itemId, ...newComment }),
-  })
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error('Error posting comment');
-      }
-      return response.json();
-    })
-    .then((data) => data.result)
-    .catch((error) => {
-      console.error('Error:', error);
-    });
-};
 
-fetch(API)
-  .then((response) => response.text())
-  .then((data) => console.log('Response:', data))
-  .catch((error) => console.error('Error:', error));
+  addComments(newComment);
+
+  try {
+    const response = await axios.post(API, newComment);
+    return response.data.result;
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
+};

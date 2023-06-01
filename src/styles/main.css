@@ -185,3 +185,7 @@ footer {
 #comment {
   height: 60px;
 }
+
+.comment-counter {
+  margin: 10px;
+}
