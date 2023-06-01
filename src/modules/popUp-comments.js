@@ -24,9 +24,11 @@ export const showPopup = (data, targetMovie) => {
     <div class="submit-container">
       <h2 class="comment-title">Add Comments</h2>            
       <form id="comments-form">
-        <input type="hidden" id="movieId" name="movieId" value="${filterResult[0].id}">
-        <input type="text" id="username" placeholder="Your name">
-        <input type="text" id="comment" placeholder="Your insights">
+        <div>
+          <input type="hidden" id="movieId" name="movieId" value="${filterResult[0].id}">
+          <input type="text" id="username" placeholder="Your name">
+          <input type="text" id="comment" placeholder="Your insights">
+        </div>
         <button id="new-comment-btn" type="submit" class="btn">Submit</button>
       </form>
     </div>

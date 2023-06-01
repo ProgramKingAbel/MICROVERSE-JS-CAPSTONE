@@ -30,7 +30,7 @@ li {
   display: flex;
   flex-wrap: wrap;
   width: 80%;
-  height: 60vh;
+  height: 70vh;
   border: 1px solid green;
   margin: 1rem auto;
   padding: 1.5rem;
@@ -142,11 +142,46 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: gray;
+  background-color: rgb(215, 211, 211);
 }
 
 .submit-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 50%;
+  border: 1px solid rgb(111, 130, 111);
+  align-self: center;
+}
+
+#comments-form {
+  display: flex;
+  align-self: center;
+  margin-top: 10px;
+}
+
+#new-comment-btn {
+  font-size: 15px;
+  width: 100px;
+  height: 50px;
+}
+
+#comments-form div {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+.comment-title {
+  align-self: center;
+  margin: 10px;
+}
+
+#username {
+  height: 25px;
+  margin-bottom: 5px;
+}
+
+#comment {
+  height: 60px;
 }
