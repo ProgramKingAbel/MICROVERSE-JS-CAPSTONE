@@ -1,17 +1,18 @@
 import { fetchShows, fetchLikes } from './modules/showsApi.js';
 import displayShows from './modules/displayShows.js';
 import './styles/main.css';
+import allShows from './modules/showsCounter.js';
 
+// Make requests and get data from the two API's combine data and Display
 Promise.all([fetchShows, fetchLikes])
-  .then(([show, likes]) => {
-    const allData = show.map((item1) => {
-      const commonItem = likes.find((item2) => item2.item_id === item1.id);
-
+  .then(([shows, likes]) => {
+    const allData = shows.map((show) => {
+      const commonItem = likes.find((item) => item.item_id === show.id);
       return {
-        ...item1,
+        ...show,
         ...commonItem,
       };
     });
-
     displayShows(allData);
+    allShows(allData);
   });
