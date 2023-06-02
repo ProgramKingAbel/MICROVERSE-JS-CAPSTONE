@@ -1,7 +1,5 @@
 <a name="readme-top"></a>
 
-![](https://img.shields.io/badge/Microverse-blueviolet)
-
 <div align="center">
 
 </div>
@@ -82,6 +80,7 @@
 
 > - [Live Demo Link](https://programkingabel.github.io/MICROVERSE-JS-CAPSTONE/dist/)
 > - [Introduction to Project]
+> - [Introduction to Project](https://drive.google.com/file/d/1mjjlcy3fIjubCG689RiTKAg8Q4hdrHfV/view?usp=sharing)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -156,7 +155,7 @@ You can deploy this project using:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[Add mobile menu]**
+- [ ] **[Add mobile version]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
