@@ -11,9 +11,15 @@ export const showPopup = (data, targetMovie) => {
   popupContent.innerHTML = `
   <span class="popup-close">&times;</span>
   <div class="data-details">
-    <img id="api-image" src="${filterResult[0].image.original}" />
+    <div class="image-container">
+      <img id="api-image" src="${filterResult[0].image.original}" />
+    </div> 
     <div class="like-container">
-      <p class="show-name">${filterResult[0].name}</p>
+      <p class="show-name">Name: ${filterResult[0].name}</p>
+      <p class="show-name">Language: ${filterResult[0].language}</p>
+      <p class="show-name">Rating: ${filterResult[0].rating.average}</p>
+      <p class="show-name">Schedule: ${filterResult[0].schedule.time}</p>
+      <div id="summary">Summary: ${filterResult[0].summary}</div>
     </div>
   </div>
   <ul id="comment-list">
