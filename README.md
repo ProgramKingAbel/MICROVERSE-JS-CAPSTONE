@@ -178,7 +178,7 @@ We would like to thank Microverse and our coding partners.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## ❓ FAQ (OPTIONAL) <a name="faq"></a>
+## ❓ FAQ <a name="faq"></a>
 
 - **How to make it mobile friendly?**
 
