@@ -7,7 +7,6 @@ const popupContent = document.getElementById('popupContent');
 
 export const showPopup = (data, targetMovie) => {
   const filterResult = data.filter((item) => item.id === targetMovie);
-  console.log(filterResult);
   // Set the content of the popup
   popupContent.innerHTML = `
   <span class="popup-close">&times;</span>
