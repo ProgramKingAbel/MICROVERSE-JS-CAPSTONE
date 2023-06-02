@@ -18,7 +18,7 @@
 
 > # Amazing Movies
 
-| Project Veiw Screenshots                                                                                             |
+| Project View Screenshots                                                                                             |
 | -------------------------------------------------------------------------------------------------------------------- |
 | <div align="center"><img src="./src/project-img/main-page.JPG" alt="screenshot" width="auto" height="auto"/></div>   |
 | <div align="center"><img src="./src/project-img/pop-up-page.JPG" alt="screenshot" width="auto" height="auto"/></div> |
