@@ -65,6 +65,7 @@
     "astral-regex": "^2.0.0",
     "autoprefixer": "^9.8.8",
     "available-typed-arrays": "^1.0.5",
+    "axios": "^1.4.0",
     "babel-jest": "^29.5.0",
     "babel-plugin-istanbul": "^6.1.1",
     "babel-plugin-jest-hoist": "^29.5.0",
