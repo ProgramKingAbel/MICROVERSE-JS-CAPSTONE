@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -5,6 +7,7 @@
   list-style: none;
   text-decoration: none;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
 .navbar {
@@ -13,7 +16,14 @@
   align-items: center;
   padding: 10px 100px;
   height: 80px;
-  background-color: rgb(113, 109, 105);
+  background-color: #ec4327;
+  color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.17) 0 -23px 25px 0 inset, rgba(0, 0, 0, 0.15) 0 -36px 30px 0 inset, rgba(0, 0, 0, 0.1) 0 -79px 40px 0 inset, rgba(0, 0, 0, 0.06) 0 2px 1px, rgba(0, 0, 0, 0.09) 0 4px 2px, rgba(0, 0, 0, 0.09) 0 8px 4px, rgba(0, 0, 0, 0.09) 0 16px 8px, rgba(0, 0, 0, 0.09) 0 32px 16px;
+}
+
+.logo {
+  font-size: 2rem;
+  font-style: italic;
 }
 
 ul {
@@ -26,26 +36,35 @@ li {
   margin-left: 10px;
 }
 
+.total {
+  text-decoration: underline;
+}
+
 .shows-container {
   display: flex;
   flex-wrap: wrap;
   width: 80%;
   height: 70vh;
-  border: 1px solid green;
+
+  /* border: 1px solid green; */
   margin: 1rem auto;
   padding: 1.5rem;
   overflow-y: scroll;
   justify-content: center;
   align-items: center;
+  box-shadow: rgba(50, 50, 93, 0.25) 0 50px 100px -20px, rgba(0, 0, 0, 0.3) 0 30px 60px -30px, rgba(10, 37, 64, 0.35) 0 -2px 6px 0 inset;
 }
 
 .show {
   display: flex;
-  width: 30%;
+  width: 20%;
   flex-direction: column;
+  background-color: transparent;
   border: 1px solid red;
+  border-radius: 4px;
   margin: 0.5rem;
   padding: 0.5rem;
+  box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0, rgba(255, 255, 255, 0.8) -6px -2px 16px 0;
 }
 
 .show img {
@@ -53,6 +72,13 @@ li {
   aspect-ratio: 1;
   align-self: center;
   justify-self: center;
+  border-radius: 1rem;
+}
+
+.show-name {
+  margin-top: 0.5rem;
+  font-weight: 700;
+  font-size: 1rem;
 }
 
 .likes {
@@ -62,10 +88,30 @@ li {
   justify-content: space-between;
 }
 
+.likes i {
+  font-size: 2rem;
+  margin-top: -3.4rem;
+
+  /* z-index: 10; */
+  border: 1px solid #ec4327;
+  border-radius: 100%;
+  background: #fff;
+  color: #ec4327;
+  box-shadow: rgba(0, 0, 0, 0.4) 0 30px 90px;
+}
+
 button {
+  padding: 0.5rem;
   align-items: center;
   justify-self: center;
   margin: 0.5rem;
+  border: 2px solid#ec4327;
+  font-size: 1rem;
+
+  /* color: #fff; */
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+  background: transparent;
 }
 
 /* Pop Up page for comments btn */
