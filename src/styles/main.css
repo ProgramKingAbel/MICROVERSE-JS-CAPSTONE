@@ -24,16 +24,19 @@
 .logo {
   font-size: 2rem;
   font-style: italic;
+  margin-left: 14%;
 }
 
 ul {
   display: flex;
   justify-content: space-between;
+  margin-right: 40%;
+  width: 25%;
 }
 
 li {
   font-size: 1.2rem;
-  margin-left: 10px;
+  margin-left: 25px;
 }
 
 .total {
