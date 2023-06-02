@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { commentCounter } from './commentCounter';
+import { commentCounter } from './commentCounter.js';
 
 const API = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/5rCENfy6BiEfx1fK3Ijn/comments';
 
