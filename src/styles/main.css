@@ -15,7 +15,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px 100px;
-  height: 80px;
+  height: 60px;
   background-color: #ec4327;
   color: #fff;
   box-shadow: rgba(0, 0, 0, 0.17) 0 -23px 25px 0 inset, rgba(0, 0, 0, 0.15) 0 -36px 30px 0 inset, rgba(0, 0, 0, 0.1) 0 -79px 40px 0 inset, rgba(0, 0, 0, 0.06) 0 2px 1px, rgba(0, 0, 0, 0.09) 0 4px 2px, rgba(0, 0, 0, 0.09) 0 8px 4px, rgba(0, 0, 0, 0.09) 0 16px 8px, rgba(0, 0, 0, 0.09) 0 32px 16px;
@@ -45,8 +45,6 @@ li {
   flex-wrap: wrap;
   width: 80%;
   height: 70vh;
-
-  /* border: 1px solid green; */
   margin: 1rem auto;
   padding: 1.5rem;
   overflow-y: scroll;
@@ -91,8 +89,6 @@ li {
 .likes i {
   font-size: 2rem;
   margin-top: -3.4rem;
-
-  /* z-index: 10; */
   border: 1px solid #ec4327;
   border-radius: 100%;
   background: #fff;
@@ -107,8 +103,6 @@ button {
   margin: 0.5rem;
   border: 2px solid#ec4327;
   font-size: 1rem;
-
-  /* color: #fff; */
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
   background: transparent;
@@ -168,14 +162,16 @@ button {
 
 footer {
   position: absolute;
-  background-color: rgb(113, 109, 105);
   left: 0;
   bottom: 0;
-  height: 80px;
+  height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
+  background-color: #ec4327;
+  color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.17) 0 -23px 25px 0 inset, rgba(0, 0, 0, 0.15) 0 -36px 30px 0 inset, rgba(0, 0, 0, 0.1) 0 -79px 40px 0 inset, rgba(0, 0, 0, 0.06) 0 2px 1px, rgba(0, 0, 0, 0.09) 0 4px 2px, rgba(0, 0, 0, 0.09) 0 8px 4px, rgba(0, 0, 0, 0.09) 0 16px 8px, rgba(0, 0, 0, 0.09) 0 32px 16px;
 }
 
 .like-container {
