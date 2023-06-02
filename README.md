@@ -79,7 +79,6 @@
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 > - [Live Demo Link](https://programkingabel.github.io/MICROVERSE-JS-CAPSTONE/dist/)
-> - [Introduction to Project]
 > - [Introduction to Project](https://drive.google.com/file/d/1mjjlcy3fIjubCG689RiTKAg8Q4hdrHfV/view?usp=sharing)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
