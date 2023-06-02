@@ -10,8 +10,8 @@ Promise.all([fetchShows, fetchLikes])
       const commonItem = likes.find((item) => item.item_id === show.id);
       return {
         ...show,
-        ...(commonItem ??{likes: 0})
-      };  
+        ...(commonItem ?? { likes: 0 }),
+      };
     });
     displayShows(allData);
     allShows(allData);
