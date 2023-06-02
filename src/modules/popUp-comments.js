@@ -14,10 +14,6 @@ export const showPopup = (data, targetMovie) => {
     <img id="api-image" src="${filterResult[0].image.original}" />
     <div class="like-container">
       <p class="show-name">${filterResult[0].name}</p>
-      <div class="likes">
-        <i class="uil uil-heart-alt"></i>
-        <span>${filterResult[0].likes} likes</span>
-      </div>
     </div>
   </div>
   <ul id="comment-list">
